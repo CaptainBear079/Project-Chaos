@@ -2,7 +2,7 @@
 
 int check_command(char* argv) {
 	if (argv == "") {
-
+		return 0;
 	}
 	else if (argv == "-disable_info") {
 		return 1;
