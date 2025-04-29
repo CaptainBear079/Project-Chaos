@@ -11,3 +11,8 @@ You can find all commands in the wiki.
 The folder "packages" will contain apps created by us or the community.
 
 Apps can be added by sending a pull request more details in the wiki.
+
+# Next version will add
+- DW Network Protocol
+- HTTPS Protocol
+- DW DNS Package
