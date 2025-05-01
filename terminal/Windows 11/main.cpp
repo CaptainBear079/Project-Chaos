@@ -23,32 +23,31 @@ public:
 	}
 };
 
-int check_command(char* argv) {
-	Console_Instance console;
+Console_Instance check_terminal_argv(char* argv, Console_Instance console) {
 	if (argv == "") {
 		return 0;
 	}
 	else if (argv == "-disable_info") {
 		console.setFlags(console.getInfo(1), true);
-		return 1;
+		return console;
 	}
 	else if (argv == "-run_as_admin") {
 		console.setFlags(true, console.getInfo(2));
-		return 2;
+		return console;
 	}
 	return -1;
 }
 
-int terminal(char* argv[]) {
+int terminal(char* argv[3], Console_Instance *console) {
 	for (int i = 1;i < 3;i++) {
-		check_command(argv[i]);
+		check_terminal_argv(argv[i], &console);
 	}
-	std::cout << "Type in a command: $/"
+	std::cout << "Type in a command:\n$/"
 	std::cin >> input;
 }
 
 int main(int argc, char* argv[]) {
-	if(terminal(argv[1]) != 0) {
+	if(terminal(argv[1], ) != 0) {
 		return -1;
 	}
 	return 0;
