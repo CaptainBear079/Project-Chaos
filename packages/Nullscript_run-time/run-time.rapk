@@ -1,0 +1,16 @@
+#include <ChaosOS.lib.sys>
+#include <ChaosOS.lib.games>
+
+// Main function
+overwrite System.main = System main(int argc, int argv, SysOBJ process) {
+    System.init(2D_3D_AR_Game, true, true, process);
+}
+
+overwrite System.init = System init(BaseConstructor label_00000, bool Uses_AI, bool Runs_in_a_Virtual_Maschine, SysOBJ process) {
+    if(Runs_in_a_Virtual_Maschine == true && (!System.CheckVM() == true)) {
+	    return VM_cant_be_runned;
+	}
+	Games.Create3DSpace(process, DWORD);
+	System.Games.init_HARDWARE(AR);
+	return SUCESS;
+}
