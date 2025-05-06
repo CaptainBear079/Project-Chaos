@@ -1,4 +1,5 @@
 {
+    "Data": "data" {},
     "Executables": "executables" {},
     "Resources": "resources" {},
     "Temp": "temp" {},
