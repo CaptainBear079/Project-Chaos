@@ -1,0 +1,10 @@
+Header: {
+    meta: {
+        name: "Example",
+        sBit: #64,
+        FileStruc: "./src/FS.struc"
+    }
+},
+"Example": {
+    "EmptyObject": {}
+}
