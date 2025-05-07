@@ -2,7 +2,9 @@ Header: {
     meta: {
         name: "Example",
         sBit: #64,
-        FileStruc: "./src/FS.struc"
+        FileStruc: "./src/FS.struc",
+        InputMaping: "./src/InputMaping.IOMap",
+        OutputMaping: "./src/OutputMaping.IOMap"
     }
 },
 "Example": {
