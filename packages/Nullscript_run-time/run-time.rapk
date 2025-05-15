@@ -1,6 +1,11 @@
 #include <ChaosOS.lib.sys>
 #include <ChaosOS.lib.games>
 
+// 079.AI START LABEL
+System overwrite System.ASM.START = PC .start() {
+    Interupt.System.Config(OS);
+}
+
 // Main function
 overwrite System.main = System main(int argc, int argv, SysOBJ process) {
     System.init(2D_3D_AR_Game, true, true, process);
