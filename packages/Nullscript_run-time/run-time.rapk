@@ -1,5 +1,9 @@
 #include "RGBA_DSS"
 
+// Text buffer pointers
+ptr WRITE_POINTER_READ;
+ptr WRITE_POINTER_WRITE;
+
 // RGBA Digital Swap Screen
 RGBA.dynamic swap_screen_1[720][1280] = { {} };
 RGBA.dynamic swap_screen_2[720][1280] = { {} };
@@ -11,7 +15,18 @@ RGBA.ptr SwapScreenPtrs[2] = { swap_screen_1, swap_screen_2 };
 // 079.AI START LABEL
 System overwrite System.ASM.START = PC .start() {
     MessageBox("Booting up...");
+    #BITS 16
+    Message("Booting...", BIT_16, WRITE_POINTER_READ, WRITE_POINTER_WRITE);
+	System.Memory.Config(1024);
+	Interupt.Devices.Maping();
     Interupt.System.Config(OS);
+	Kernel();
+}
+
+Syscall.Shutdown Kernel() {
+    // Init Command Line
+    // Init Explorer
+	// Init Gui
 }
 
 // Main function
